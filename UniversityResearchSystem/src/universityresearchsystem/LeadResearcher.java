@@ -32,9 +32,9 @@ public class LeadResearcher extends Researcher {
     }
 
     public void displayResearcherInfo() {
+        super.displayResearcherInfo();
         System.out.println("Team Size: " + teamSize);
         System.out.println("Project Fund: " + projectFund);
-        super.displayResearcherInfo();
 //        System.out.println("Project Fund: "+super.getName());
 //        System.out.println("Project Fund: "+super.getEmail());
     }

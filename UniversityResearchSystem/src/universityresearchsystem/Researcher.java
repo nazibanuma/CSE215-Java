@@ -5,12 +5,13 @@ public class Researcher {
     private String researcherID;
     private String name;
     private String email;
-    private int publications = 0;
+    private int publications;
 
     public Researcher(String researcherID, String name, String email) {
         this.researcherID = researcherID;
         this.name = name;
         this.email = email;
+        publications = 0;
     }
 
     public String getResearcherID() {
