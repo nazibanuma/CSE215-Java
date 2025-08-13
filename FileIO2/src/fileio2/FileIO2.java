@@ -33,8 +33,9 @@ public class FileIO2 {
 
             int count = 0;
             while (reader.hasNextLine()) {
-                System.out.println(reader.nextLine());
-                if (!(reader.nextLine().trim().isEmpty())) {
+                String currentline = reader.nextLine();
+                System.out.println("[" + currentline + "]");
+                if (!(currentline.isEmpty())) {
                     count++;
                 }
 

@@ -1,20 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package exception_throws;
 
-/**
- *
- * @author User
- */
-public class Exception_throws {
+public class Exception_throws{ 
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static double area(int radius) throws MyException{
+        if(radius < 0){
+            throw new MyException();
+        }
+        double ar = Math.PI * radius * radius;
+        return ar;
     }
-    
+
+    public static void main(String[] args) {
+        
+        try{
+            System.out.println("area is :"+area(1));
+            area(-1);
+         
+        }catch(MyException e){
+            System.out.println("Exception: "+e);
+            
+        }
+           
+      
+
+    }
+
 }
