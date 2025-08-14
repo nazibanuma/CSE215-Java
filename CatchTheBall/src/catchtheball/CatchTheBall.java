@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-// ===== Custom Exception =====
 class BallSpeedTooHighException extends Exception {
 
     public BallSpeedTooHighException(String message) {
@@ -13,7 +12,6 @@ class BallSpeedTooHighException extends Exception {
     }
 }
 
-// ===== Superclass =====
 abstract class Ball {
 
     protected int x, y, size, speed;
@@ -21,7 +19,7 @@ abstract class Ball {
 
     public Ball(int x, int y, int size, int speed, Color color) throws BallSpeedTooHighException {
         if (speed > 15) {
-            throw new BallSpeedTooHighException("Ball speed too high!");
+            throw new BallSpeedTooHighException("Ball speed too high");
         }
         this.x = x;
         this.y = y;
@@ -38,7 +36,6 @@ abstract class Ball {
     }
 }
 
-// ===== Subclass =====
 class NormalBall extends Ball {
 
     public NormalBall(int x, int y, int size, int speed, Color color) throws BallSpeedTooHighException {
@@ -51,7 +48,6 @@ class NormalBall extends Ball {
     }
 }
 
-// ===== Paddle Class =====
 class Paddle {
 
     int x, y, width, height, speed;
@@ -74,7 +70,7 @@ class Paddle {
     public void moveRight() {
         x += speed;
         if (x + width > 400) {
-            x = 400 - width; // keep inside screen
+            x = 400 - width;
         }
     }
 
@@ -84,7 +80,6 @@ class Paddle {
     }
 }
 
-// ===== Game Panel =====
 class GamePanel extends JPanel implements Runnable {
 
     private Ball ball;
@@ -97,7 +92,7 @@ class GamePanel extends JPanel implements Runnable {
         setBackground(Color.WHITE);
 
         try {
-            ball = new NormalBall(200, 0, 20, 5, Color.RED);
+            ball = new NormalBall((int) (Math.random() * (400 - 20)), 0, 20, 5, Color.RED);
         } catch (BallSpeedTooHighException e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             System.exit(0);
@@ -105,7 +100,6 @@ class GamePanel extends JPanel implements Runnable {
 
         paddle = new Paddle(160, 450, 80, 10, 15);
 
-        // Keyboard control
         setFocusable(true);
         addKeyListener(new KeyAdapter() {
             @Override
@@ -118,25 +112,28 @@ class GamePanel extends JPanel implements Runnable {
             }
         });
 
-        new Thread(this).start(); // Start game loop
+        new Thread(this).start();
     }
 
     @Override
-
     public void run() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ignored) {
+        }
+
         while (running) {
             ball.move();
             checkCollision();
             repaint();
 
-            // Check if missed → end game once
             if (ball.y > getHeight()) {
                 running = false;
                 SwingUtilities.invokeLater(() -> {
                     JOptionPane.showMessageDialog(this, "Game Over! Final Score: " + score);
                     System.exit(0);
                 });
-                break; // stop the loop immediately
+                break;
             }
 
             try {
@@ -167,7 +164,6 @@ class GamePanel extends JPanel implements Runnable {
     }
 }
 
-// ===== Main Game Frame =====
 public class CatchTheBall {
 
     public static void main(String[] args) {
