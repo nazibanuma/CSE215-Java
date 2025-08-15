@@ -1,0 +1,4 @@
+skyfall|images/skyfall_8.png|https://www.youtube.com/|csdaf|sdf|fsdf|Action|1 January 2000|English|5:5:5|Upcoming|cbgdfbf
+csac|D:\Study Material\Pupil\Numa\CSE215\Project\Theatre2\src\theatre2\poster\csac_12.png|csc|csac|csac|csac|Genre|1 January 2000|Language|c:fv:vfd|Upcoming|vdfv
+a|D:\Study Material\Pupil\Numa\CSE215\Project\Theatre2\src\theatre2\poster\a_calendar (1).png|||||Genre|1 January 2000|Language|0:0:0|Upcoming|
+vbxv|D:\Study Material\Pupil\Numa\CSE215\Project\Theatre2\src\theatre2\poster\calendar (2).png|vxvx||||Genre|1 January 2000|Language|0:0:0|Upcoming|

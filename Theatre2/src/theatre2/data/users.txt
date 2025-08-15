@@ -1,0 +1,5 @@
+a|a|ADMIN
+john|1234|USER
+
+numa|a|USER
+numa2|a|USER
