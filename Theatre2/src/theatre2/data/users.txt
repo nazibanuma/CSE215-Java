@@ -1,5 +1,3 @@
-a|a|ADMIN
-john|1234|USER
-
-numa|a|USER
-numa2|a|USER
+naziba|Naziba Ali|Female|01712345678|nazibanuma@gmail.com|Zigatola
+a|User|Gender|01700000000|example@gmail.com|Address
+b|User|Gender|01700000000|example@gmail.com|Address

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package theatre2.dashboard.AdminDashboardFrames;
 
 import java.io.File;
@@ -10,40 +6,82 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author AURORA
- */
+
 public class Movie extends javax.swing.JInternalFrame {
 
     private File selectedPosterFile = null;
-    private String filepath = "D:\\Study Material\\Pupil\\Numa\\CSE215\\Project\\Theatre2\\src\\theatre2\\data\\movies.txt";
+    private String filepath = "src/theatre2/data/movies.txt";
 
     public Movie() {
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI) this.getUI();
         ui.setNorthPane(null);
-        
+
+        movieTable.setModel(buildMovieTableModel());
+        movieTable.setRowHeight(110);                       // make room for the poster
+        movieTable.getColumnModel().getColumn(1).setMinWidth(80);
+        movieTable.getColumnModel().getColumn(1).setMaxWidth(120);
+        movieTable.getColumnModel().getColumn(0).setMaxWidth(60); // "No" column
         loadMoviesToTable();
     }
 
-    private void loadMoviesToTable() {
-        javax.swing.table.DefaultTableModel model = (javax.swing.table.DefaultTableModel) movieTable.getModel();
-        model.setRowCount(0); // clear table first
+    private javax.swing.table.DefaultTableModel buildMovieTableModel() {
+        return new javax.swing.table.DefaultTableModel(
+                new String[]{"No", "Poster", "Movie Name", "Genre", "Language", "Release Date", "Duration", "Status"}, 0
+        ) {
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                return switch (columnIndex) {
+                    case 0 ->
+                        Integer.class;
+                    case 1 ->
+                        javax.swing.Icon.class; // <- important
+                    default ->
+                        String.class;
+                };
+            }
 
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+    }
+
+    private javax.swing.ImageIcon loadThumbnail(String absPath, int w, int h) {
         try {
-            java.io.FileReader fr = new java.io.FileReader(filepath);
-            java.io.BufferedReader br = new java.io.BufferedReader(fr);
+            java.awt.image.BufferedImage src = javax.imageio.ImageIO.read(new java.io.File(absPath));
+            if (src == null) {
+                return null; // unreadable/unsupported image
+            }
+            java.awt.Image scaled = src.getScaledInstance(w, h, java.awt.Image.SCALE_SMOOTH);
+            return new javax.swing.ImageIcon(scaled);
+        } catch (Exception e) {
+            return null; // fall back gracefully
+        }
+    }
+
+    private void loadMoviesToTable() {
+        javax.swing.table.DefaultTableModel model = buildMovieTableModel();
+        int count = 1;
+
+        try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(filepath))) {
             String line;
-            int count = 1;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split("\\|");
+                // Expecting: name|posterPath|trailer|actor|director|writer|genre|releaseDate|language|duration|status|synopsis
                 if (parts.length >= 11) {
-                    // columns: No, Poster, Movie Name, Genre, Language, Release Date, Duration, Status
+                    String posterPath = parts[1];
+                    javax.swing.Icon posterIcon = loadThumbnail(posterPath, 75, 105); // ~ aspect ratio
+                    if (posterIcon == null) {
+                        // if image fails to load, show the file name as fallback
+                        posterIcon = new javax.swing.ImageIcon(new byte[0]); // empty icon keeps column type = Icon
+                    }
+
                     model.addRow(new Object[]{
                         count++,
-                        parts[1], // Poster path
+                        posterIcon, // <- show image, not path
                         parts[0], // Movie Name
                         parts[6], // Genre
                         parts[8], // Language
@@ -53,13 +91,14 @@ public class Movie extends javax.swing.JInternalFrame {
                     });
                 }
             }
-            br.close();
-            fr.close();
         } catch (java.io.FileNotFoundException e) {
-            // file might not exist yet — no problem
+            // file might not exist yet — ignore
         } catch (Exception e) {
             javax.swing.JOptionPane.showMessageDialog(this, "Error loading movies: " + e.getMessage());
         }
+
+        movieTable.setModel(model); // set after fill (or set before; either is fine)
+        movieTable.setRowHeight(110);
     }
 
     /**
@@ -286,7 +325,6 @@ public class Movie extends javax.swing.JInternalFrame {
 
         synopsisField.setColumns(20);
         synopsisField.setRows(5);
-        synopsisField.setPreferredSize(new java.awt.Dimension(600, 90));
         jScrollPane1.setViewportView(synopsisField);
 
         uploadPosterButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

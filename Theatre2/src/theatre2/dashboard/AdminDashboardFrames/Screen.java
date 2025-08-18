@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+ */
 package theatre2.dashboard.AdminDashboardFrames;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -18,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Screen extends javax.swing.JInternalFrame {
 
-    private String filepath = "D:\\Study Material\\Pupil\\Numa\\CSE215\\Project\\Theatre2\\src\\theatre2\\data\\screens.txt";
+    private String filepath = "src/theatre2/data/screens.txt";
 
     public Screen() {
         initComponents();

@@ -1,11 +1,23 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package theatre2.dashboard;
 
 import theatre2.LoginSignup.LoginFrame;
+import theatre2.dashboard.AdminDashboardFrames.Home;
 import theatre2.dashboard.AdminDashboardFrames.Movie;
+import theatre2.dashboard.AdminDashboardFrames.Show;
 import theatre2.dashboard.AdminDashboardFrames.Screen;
+import theatre2.dashboard.AdminDashboardFrames.Ticket;
+import theatre2.dashboard.AdminDashboardFrames.Booking;
 
 import java.awt.Color;
 
+/**
+ *
+ * @author AURORA
+ */
 public class AdminDashboard extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminDashboard.class.getName());
@@ -17,13 +29,20 @@ public class AdminDashboard extends javax.swing.JFrame {
         DefaultColor = new Color(0, 153, 153);
         ClickedColor = new Color(0, 204, 204);
 
+        Home home = new Home();
+        MainDesktopPane.removeAll();
+        MainDesktopPane.add(home);
+        home.setBounds(0, 0, MainDesktopPane.getWidth(), MainDesktopPane.getHeight());
+        home.setVisible(true);
+        MainDesktopPane.revalidate();
+        MainDesktopPane.repaint();
+
         HomeButton.setBackground(ClickedColor);
         MovieButton.setBackground(DefaultColor);
         ShowButton.setBackground(DefaultColor);
         ScreenButton.setBackground(DefaultColor);
         TicketButton.setBackground(DefaultColor);
         BookingButton.setBackground(DefaultColor);
-        ReportsButton.setBackground(DefaultColor);
     }
 
     /**
@@ -45,7 +64,6 @@ public class AdminDashboard extends javax.swing.JFrame {
         HomeButton = new javax.swing.JButton();
         ShowButton = new javax.swing.JButton();
         ScreenButton = new javax.swing.JButton();
-        ReportsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,18 +170,6 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
 
-        ReportsButton.setBackground(new java.awt.Color(0, 153, 153));
-        ReportsButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        ReportsButton.setForeground(new java.awt.Color(255, 255, 255));
-        ReportsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/theatre2/icon/reports.png"))); // NOI18N
-        ReportsButton.setText("  Reports");
-        ReportsButton.setBorder(null);
-        ReportsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReportsButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -179,7 +185,6 @@ public class AdminDashboard extends javax.swing.JFrame {
             .addComponent(HomeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ShowButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ScreenButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(ReportsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,9 +203,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addComponent(TicketButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BookingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ReportsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
                 .addComponent(LogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -233,7 +236,11 @@ public class AdminDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         Movie movie = new Movie();
         MainDesktopPane.removeAll();
-        MainDesktopPane.add(movie).setVisible(true);
+        MainDesktopPane.add(movie);
+        movie.setBounds(0, 0, MainDesktopPane.getWidth(), MainDesktopPane.getHeight());
+        movie.setVisible(true);
+        MainDesktopPane.revalidate();
+        MainDesktopPane.repaint();
 
         HomeButton.setBackground(DefaultColor);
         MovieButton.setBackground(ClickedColor);
@@ -241,58 +248,92 @@ public class AdminDashboard extends javax.swing.JFrame {
         ScreenButton.setBackground(DefaultColor);
         TicketButton.setBackground(DefaultColor);
         BookingButton.setBackground(DefaultColor);
-        ReportsButton.setBackground(DefaultColor);
+
+        //@author Naziba Ali
+
     }//GEN-LAST:event_MovieButtonActionPerformed
 
     private void TicketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicketButtonActionPerformed
         // TODO add your handling code here:
+        Ticket ticket = new Ticket();
+        MainDesktopPane.removeAll();
+        MainDesktopPane.add(ticket);
+        ticket.setBounds(0, 0, MainDesktopPane.getWidth(), MainDesktopPane.getHeight());
+        ticket.setVisible(true);
+        MainDesktopPane.revalidate();
+        MainDesktopPane.repaint();
+
         HomeButton.setBackground(DefaultColor);
         MovieButton.setBackground(DefaultColor);
         ShowButton.setBackground(DefaultColor);
         ScreenButton.setBackground(DefaultColor);
         TicketButton.setBackground(ClickedColor);
         BookingButton.setBackground(DefaultColor);
-        ReportsButton.setBackground(DefaultColor);
     }//GEN-LAST:event_TicketButtonActionPerformed
 
     private void BookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingButtonActionPerformed
         // TODO add your handling code here:
+        Booking booking = new Booking();
+        MainDesktopPane.removeAll();
+        MainDesktopPane.add(booking);
+        booking.setBounds(0, 0, MainDesktopPane.getWidth(), MainDesktopPane.getHeight());
+        booking.setVisible(true);
+        MainDesktopPane.revalidate();
+        MainDesktopPane.repaint();
+
         HomeButton.setBackground(DefaultColor);
         MovieButton.setBackground(DefaultColor);
         ShowButton.setBackground(DefaultColor);
         ScreenButton.setBackground(DefaultColor);
         TicketButton.setBackground(DefaultColor);
         BookingButton.setBackground(ClickedColor);
-        ReportsButton.setBackground(DefaultColor);
     }//GEN-LAST:event_BookingButtonActionPerformed
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         // TODO add your handling code here:
+        Home home = new Home();
+        MainDesktopPane.removeAll();
+        MainDesktopPane.add(home);
+        home.setBounds(0, 0, MainDesktopPane.getWidth(), MainDesktopPane.getHeight());
+        home.setVisible(true);
+        MainDesktopPane.revalidate();
+        MainDesktopPane.repaint();
+
         HomeButton.setBackground(ClickedColor);
         MovieButton.setBackground(DefaultColor);
         ShowButton.setBackground(DefaultColor);
         ScreenButton.setBackground(DefaultColor);
         TicketButton.setBackground(DefaultColor);
         BookingButton.setBackground(DefaultColor);
-        ReportsButton.setBackground(DefaultColor);
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void ShowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowButtonActionPerformed
         // TODO add your handling code here:
+        Show show = new Show();
+        MainDesktopPane.removeAll();
+        MainDesktopPane.add(show);
+        show.setBounds(0, 0, MainDesktopPane.getWidth(), MainDesktopPane.getHeight());
+        show.setVisible(true);
+        MainDesktopPane.revalidate();
+        MainDesktopPane.repaint();
+
         HomeButton.setBackground(DefaultColor);
         MovieButton.setBackground(DefaultColor);
         ShowButton.setBackground(ClickedColor);
         ScreenButton.setBackground(DefaultColor);
         TicketButton.setBackground(DefaultColor);
         BookingButton.setBackground(DefaultColor);
-        ReportsButton.setBackground(DefaultColor);
     }//GEN-LAST:event_ShowButtonActionPerformed
 
     private void ScreenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScreenButtonActionPerformed
         // TODO add your handling code here:
         Screen screen = new Screen();
         MainDesktopPane.removeAll();
-        MainDesktopPane.add(screen).setVisible(true);
+        MainDesktopPane.add(screen);
+        screen.setBounds(0, 0, MainDesktopPane.getWidth(), MainDesktopPane.getHeight());
+        screen.setVisible(true);
+        MainDesktopPane.revalidate();
+        MainDesktopPane.repaint();
 
         HomeButton.setBackground(DefaultColor);
         MovieButton.setBackground(DefaultColor);
@@ -300,19 +341,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         ScreenButton.setBackground(ClickedColor);
         TicketButton.setBackground(DefaultColor);
         BookingButton.setBackground(DefaultColor);
-        ReportsButton.setBackground(DefaultColor);
     }//GEN-LAST:event_ScreenButtonActionPerformed
-
-    private void ReportsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportsButtonActionPerformed
-        // TODO add your handling code here:
-        HomeButton.setBackground(DefaultColor);
-        MovieButton.setBackground(DefaultColor);
-        ShowButton.setBackground(DefaultColor);
-        ScreenButton.setBackground(DefaultColor);
-        TicketButton.setBackground(DefaultColor);
-        BookingButton.setBackground(DefaultColor);
-        ReportsButton.setBackground(ClickedColor);
-    }//GEN-LAST:event_ReportsButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -321,7 +350,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JButton LogoutButton;
     private javax.swing.JDesktopPane MainDesktopPane;
     private javax.swing.JButton MovieButton;
-    private javax.swing.JButton ReportsButton;
     private javax.swing.JButton ScreenButton;
     private javax.swing.JButton ShowButton;
     private javax.swing.JButton TicketButton;

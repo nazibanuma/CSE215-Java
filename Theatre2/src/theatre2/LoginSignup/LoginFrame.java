@@ -2,21 +2,23 @@ package theatre2.LoginSignup;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import theatre2.dashboard.OldAdminDashboard;
 import theatre2.dashboard.AdminDashboard;
 import theatre2.dashboard.UserDashboard;
+import theatre2.dashboard.MainPage;
 import theatre2.LoginSignup.SignupFrame;
 import javax.swing.JOptionPane;
 
 public class LoginFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginFrame.class.getName());
+    
+    private String filepath = "src/theatre2/data/password.txt";
 
     public LoginFrame() {
         initComponents();
     }
 
-
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -151,7 +153,7 @@ public class LoginFrame extends javax.swing.JFrame {
         boolean matchFound = false;
 
         try {
-            FileReader fr = new FileReader("F:\\github\\CSE215-Java\\Theatre2\\src\\theatre2\\data\\users.txt");
+            FileReader fr = new FileReader(filepath);
             BufferedReader br = new BufferedReader(fr);
 
             String line;
@@ -168,7 +170,9 @@ public class LoginFrame extends javax.swing.JFrame {
                         if (role.equalsIgnoreCase("ADMIN")) {
                             new AdminDashboard().setVisible(true);
                         } else if (role.equalsIgnoreCase("USER")) {
-                            new UserDashboard().setVisible(true);
+                            
+                            //new UserDashboard(username).setVisible(true);
+                            new MainPage(username).setVisible(true);
                         }
                         this.dispose();
                         break;
@@ -189,20 +193,21 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_usernameFieldActionPerformed
 
     private void signupHereLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupHereLabelMousePressed
-        // TODO add your handling code here:
+       
         new SignupFrame().setVisible(true);
         dispose(); // close the login frame
     }//GEN-LAST:event_signupHereLabelMousePressed
 
     private void showPasswordCheckBoxMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showPasswordCheckBoxMousePressed
-        // TODO add your handling code here:
+     
         if (!showPasswordCheckBox.getState()) {
             passwordField.setEchoChar((char) 0); // show password
-        } else {
+        } 
+        else {
             passwordField.setEchoChar('*'); // hide password
         }
     }//GEN-LAST:event_showPasswordCheckBoxMousePressed

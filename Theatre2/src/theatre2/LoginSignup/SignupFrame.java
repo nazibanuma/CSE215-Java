@@ -1,4 +1,5 @@
 package theatre2.LoginSignup;
+
 import javax.swing.JOptionPane;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,6 +9,9 @@ import java.io.BufferedWriter;
 public class SignupFrame extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SignupFrame.class.getName());
+
+    private String filepath = "src/theatre2/data/password.txt";
+    private String usersFilepath = "src/theatre2/data/users.txt";
 
     public SignupFrame() {
         initComponents();
@@ -156,8 +160,7 @@ public class SignupFrame extends javax.swing.JFrame {
         if (!showPasswordCheckBox.getState()) {
             passwordField.setEchoChar((char) 0);
             confirmPasswordField.setEchoChar((char) 0); // show password
-        } 
-        else {
+        } else {
             passwordField.setEchoChar('*');
             confirmPasswordField.setEchoChar('*'); // hide password
         }
@@ -168,7 +171,6 @@ public class SignupFrame extends javax.swing.JFrame {
         String username = usernameField.getText().trim();
         String password = new String(passwordField.getPassword());
         String confirm = new String(confirmPasswordField.getPassword());
-        String filepath = "D:\\Study Material\\Pupil\\Numa\\CSE215\\Project\\Theatre2\\src\\theatre2\\data\\users.txt";
 
         if (username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill all fields.");
@@ -211,18 +213,28 @@ public class SignupFrame extends javax.swing.JFrame {
 
         // Append new user as USER
         try {
-            FileWriter fw = new java.io.FileWriter(filepath, true);
-            BufferedWriter bw = new java.io.BufferedWriter(fw);
+            java.io.FileWriter fw = new java.io.FileWriter(filepath, true);
+            java.io.BufferedWriter bw = new java.io.BufferedWriter(fw);
             bw.write(username + "|" + password + "|USER");
             bw.newLine();
             bw.close();
             fw.close();
-            JOptionPane.showMessageDialog(this, "Signup successful! Please login.");
+
+            java.io.FileWriter fw1 = new java.io.FileWriter(usersFilepath, true);
+            java.io.BufferedWriter bw1 = new java.io.BufferedWriter(fw1); // <- use fw1
+            bw1.write(username + "|User|Gender|01700000000|example@gmail.com|Address");
+            bw1.newLine();
+            bw1.close();
+            fw1.close();
+
+            javax.swing.JOptionPane.showMessageDialog(this, "Signup successful! Please login.");
             new LoginFrame().setVisible(true);
             dispose();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error writing to users file: " + e.getMessage());
+            javax.swing.JOptionPane.showMessageDialog(this, "Error writing to users file: " + e.getMessage());
         }
+
+
     }//GEN-LAST:event_signupButtonActionPerformed
 
     private void loginHereLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginHereLabelMousePressed
