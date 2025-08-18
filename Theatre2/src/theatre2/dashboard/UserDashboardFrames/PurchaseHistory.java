@@ -8,10 +8,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author AURORA
- */
 public class PurchaseHistory extends javax.swing.JInternalFrame {
 
     private String loggedInUsername;

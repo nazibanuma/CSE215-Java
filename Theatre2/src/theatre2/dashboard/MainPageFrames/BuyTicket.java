@@ -7,10 +7,6 @@ package theatre2.dashboard.MainPageFrames;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import theatre2.LoginSignup.PaymentFrame;
 
-/**
- *
- * @author AURORA
- */
 public class BuyTicket extends javax.swing.JInternalFrame {
 
     private String ticketPriceFilePath = "src/theatre2/data/tickets.txt";

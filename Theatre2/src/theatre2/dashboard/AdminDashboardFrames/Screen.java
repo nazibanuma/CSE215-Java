@@ -39,7 +39,7 @@ public class Screen extends javax.swing.JInternalFrame {
         model.setRowCount(0); // clear table
 
         try {
-            FileReader fr = new FileReader("D:\\Study Material\\Pupil\\Numa\\CSE215\\Project\\Theatre2\\src\\theatre2\\data\\screens.txt");
+            FileReader fr = new FileReader("src\\theatre2\\data\\screens.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             int no = 1;

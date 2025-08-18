@@ -13,7 +13,7 @@ public class UpdateProfile extends javax.swing.JInternalFrame {
     private String loggedInUsername;
     private String filepath = "src/theatre2/data/users.txt";
 
-    public UpdateProfile(String username) {
+    public UpdateProfile(String username) {//userDash updateProfileActionPerformed er constructor
         this.loggedInUsername = username;
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
@@ -23,7 +23,7 @@ public class UpdateProfile extends javax.swing.JInternalFrame {
         loadUserToFields();
     }
 
-    private void loadUserToFields() {
+    private void loadUserToFields() { 
         if (loggedInUsername == null || loggedInUsername.trim().isEmpty()) {
             return;
         }

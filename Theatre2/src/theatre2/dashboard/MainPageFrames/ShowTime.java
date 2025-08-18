@@ -10,10 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author AURORA
- */
+
 public class ShowTime extends javax.swing.JInternalFrame {
 
     private String showFilePath = "src/theatre2/data/shows.txt";

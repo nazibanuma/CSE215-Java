@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package theatre2.dashboard.AdminDashboardFrames;
 
 import theatre2.LoginSignup.PaymentFrame;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author AURORA
- */
+
 public class Booking extends javax.swing.JInternalFrame {
 
     private String ticketPriceFilePath = "src/theatre2/data/tickets.txt";

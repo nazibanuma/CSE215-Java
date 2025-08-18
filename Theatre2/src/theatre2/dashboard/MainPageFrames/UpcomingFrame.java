@@ -6,10 +6,7 @@ package theatre2.dashboard.MainPageFrames;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author AURORA
- */
+
 public class UpcomingFrame extends javax.swing.JInternalFrame {
 
     // --- config you can tweak ---

@@ -172,7 +172,7 @@ public class LoginFrame extends javax.swing.JFrame {
                         } else if (role.equalsIgnoreCase("USER")) {
                             
                             //new UserDashboard(username).setVisible(true);
-                            new MainPage(username).setVisible(true);
+                            new MainPage(username).setVisible(true);//MainPage with the username constructor !!!!!!
                         }
                         this.dispose();
                         break;
