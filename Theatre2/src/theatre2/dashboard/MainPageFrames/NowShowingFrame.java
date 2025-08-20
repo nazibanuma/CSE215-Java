@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package theatre2.dashboard.MainPageFrames;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author AURORA
- */
+
 public class NowShowingFrame extends javax.swing.JInternalFrame {
 
 
@@ -17,7 +10,7 @@ public class NowShowingFrame extends javax.swing.JInternalFrame {
     private final int COLS = 4;      // posters per row
     private final int HGAP = 20;     // grid horizontal gap
     private final int VGAP = 20;     // grid vertical gap
-    // -----------------------------
+   
 
     public NowShowingFrame() {
         initComponents();

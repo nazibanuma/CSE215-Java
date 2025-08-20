@@ -110,9 +110,9 @@ public class ShowTime extends javax.swing.JInternalFrame {
                 if (p.length >= 5) {
                     String movie = p[0].trim();
 
-                    boolean accept = (filterMovie == null
-                            || "All Movies".equalsIgnoreCase(filterMovie)
-                            || movie.equalsIgnoreCase(filterMovie));
+                    boolean accept = (filterMovie == null || "All Movies".equalsIgnoreCase(filterMovie)  || movie.equalsIgnoreCase(filterMovie));
+                           
+                          
 
                     if (accept) {
                         model.addRow(new Object[]{no++, movie, p[1], p[2], p[3], p[4]});

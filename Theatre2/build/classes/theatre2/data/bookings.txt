@@ -107,3 +107,4 @@ Adib Rahman|01474286523|Borbaad|20 August 2025|Screen 1|12:34 PM - 03:08 PM|3|15
 User|01700000000|Ballerina|18 August 2025|Screen 6 | 12:19 PM - 02:38 PM|2|2000|a
 User|01700000000|Ballerina|18 August 2025|Screen 5 | 10:00 AM - 12:19 PM|2|1400|a
 Naruto|01764489385|Jurassic World: Rebirth|18 August 2025|Screen 1 | 10:00 AM - 12:28 PM|2|1000|a
+Naruto|01764489385|Thunderbolts*|18 August 2025|Screen 2 | 10:00 AM - 12:22 PM|2|1000|a
