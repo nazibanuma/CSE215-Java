@@ -1,0 +1,6 @@
+Truck,2,sato,2023,2
+Motorcycle,3,toto,2023,0
+Car,4,totota,2221,3
+Truck,5,roto,2222,7
+Car,6,eito,4532,6
+Car,7,hggd,4533,4
