@@ -46,11 +46,11 @@ public class RectangleCalculator {
         calculateA.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                double width = Double.parseDouble(widthTF.getText());
-                double length = Double.parseDouble(lengthTF.getText());
-                double area = width * length;
+                int width = Integer.parseInt(widthTF.getText());
+                int length = Integer.parseInt(lengthTF.getText());
+                int area = width * length;
 
-                areaTF.setText(Double.toString(area));
+                areaTF.setText(Integer.toString(area));
             }
         });
 
