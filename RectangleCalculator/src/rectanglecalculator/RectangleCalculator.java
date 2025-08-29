@@ -54,7 +54,7 @@ public class RectangleCalculator {
             }
         });
 
-         calculateP.addActionListener(new ActionListener() {
+         calculateA.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 double width = Double.parseDouble(widthTF.getText());
@@ -66,12 +66,12 @@ public class RectangleCalculator {
         });
          
          
-//        calculateP.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-////                frame.dispose();
-//                 System.exit(0);
-//            }
-//        });
+        calculateP.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+//                frame.dispose();
+                 System.exit(0);
+            }
+        });
     }
 
 }

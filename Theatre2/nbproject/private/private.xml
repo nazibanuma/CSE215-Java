@@ -2,35 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/AdminDashboard.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/UserDashboard.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/AdminDashboardFrames/Movie.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/AdminDashboardFrames/Screen.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/data/movies.txt</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/data/screens.txt</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/data/users.txt</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/Theatre2.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/LoginSignup/LoginFrame.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/data/bookings.txt</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/data/tickets.txt</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/data/shows.txt</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/data/password.txt</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/LoginSignup/PaymentFrame.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/AdminDashboardFrames/Booking.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/AdminDashboardFrames/Home.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/UserDashboardFrames/Profile.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/UserDashboardFrames/UpdatePassword.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/MainPage.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/MainPageFrames/NowShowingFrame.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/MainPageFrames/ShowTime.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/MainPageFrames/BuyTicket.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/MainPageFrames/UpcomingFrame.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/LoginSignup/SignupFrame.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/UserDashboardFrames/UpdateProfile.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/UserDashboardFrames/PurchaseHistory.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/AdminDashboardFrames/Ticket.java</file>
-            <file>file:/F:/github/CSE215-Java/Theatre2/src/theatre2/dashboard/AdminDashboardFrames/Show.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
