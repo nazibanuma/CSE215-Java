@@ -25,7 +25,7 @@ public class TapTap {
         frame.add(tap3);
         frame.add(tap4);
 
-        JLabel TF = new JLabel("Tapped null");
+        JLabel TF = new JLabel("Tapped null",SwingConstants.CENTER);
         frame.add(TF);
 
         tap1.addActionListener(new ActionListener() {

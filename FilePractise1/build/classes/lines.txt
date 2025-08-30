@@ -2,3 +2,5 @@ nuha
 nuha
    
 
+ numa stop
+Numa STOP
