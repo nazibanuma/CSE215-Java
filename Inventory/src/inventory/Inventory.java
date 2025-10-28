@@ -1,6 +1,4 @@
 package inventory;
-
-// Given code:
 class Customer implements Runnable {
 
     int itemsToBuy;
